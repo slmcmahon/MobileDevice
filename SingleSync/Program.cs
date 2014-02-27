@@ -37,7 +37,7 @@ namespace SingleSync
 							{
 								var file = files[i];
 								var remoteFolder = Path.Combine(options.TargetDirectory,
-									new FileInfo(file).DirectoryName.Substring(file.IndexOf(root) + root.Length + 1)).Replace(@"\", "/");
+									new FileInfo(file).DirectoryName.Substring(file.IndexOf(root) + root.Length)).Replace(@"\", "/");
 								CreateRemoteDirectory(e.iPhone, remoteFolder);
 								CopyFile(e.iPhone, file, Path.Combine(remoteFolder, Path.GetFileName(file)).Replace(@"\", "/"),
 									((double)i / (double)files.Count) * 100.0);
